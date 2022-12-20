@@ -95,7 +95,7 @@
     function onConnect() {
         // Once a connection has been made, make a subscription and send a message.
         console.log("onConnect");
-        client.subscribe("le380/sensors/kidbright");
+        client.subscribe("cn466/miniproject1");
         //message = new Paho.MQTT.Message("Hello");
         //message.destinationName = "World";
         //client.send(message);
@@ -119,8 +119,8 @@
         // tempVal.innerHTML = data.temp;
         const ldrVal = document.getElementById("ldr");
         // ldrVal.innerHTML = data.ldr;
-        temp = parseInt(data.temp)
-        ldr = parseInt(data.ldr)
+        temp = parseInt(data.temperature)
+        ldr = parseInt(data.pressure)
         animateValue(tempVal, 0, temp, 800);
         animateValue(ldrVal, 0, ldr, 800);
     }
