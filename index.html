@@ -54,24 +54,31 @@
 </style>
 <body style="background-color: #F9F1F0;">
     <h1 style="text-align: center; padding: 0.5em; color: white;" class="bg-head en-font">MQTT Data</h1>
-    <span style="margin-left: 1em; " ><b style="font-size: 30px;" class="en-font">Type:</b></span>
-    <span id="topic" style="font-size: 30px; margin-left: 0.5em;" class="en-font"></span>
     <div class="container">
         <div class="row">
             <div class="col box2 th-font" style="padding-top: 1em; font-size: 18px; margin-left: 3em; margin-right: 3em; margin-top: 2em;">
-                <b>อุณหภูมิ/ความชื้น</b>
+                <b>อุณหภูมิ</b>
                 <hr>
                 <br>
-                <span style="font-size: 100px;" id="temp"></span>
+                <span style="font-size: 100px;" id="temp">...</span>
                 <span style="margin-left: 1em;">°C</span>
             </div>
             <div class="col box1 th-font"
-                style="padding-top: 1em; font-size: 18px; margin-left: 3em; margin-right: 3em; margin-top: 2em;">
+                style="padding-top: 1em; font-size: 18px;margin-left: 3em; margin-right: 3em; margin-top: 2em;">
                 <b>ความดันอากาศ</b>
                 <hr>
                 <br>
-                <span style="font-size: 100px;" id="ldr"></span>
+                <br>
+                <span style="font-size: 60px;"id="ldr">...</span>
                 <span style="margin-left: 1em;">Pa</span>
+            </div>
+            <div class="col box2 th-font"
+                style="padding-top: 1em; font-size: 18px; margin-left: 3em; margin-right: 3em; margin-top: 2em;">
+                <b>ความชื้น</b>
+                <hr>
+                <br>
+                <span style="font-size: 100px;" id="humidity">...</span>
+                <span style="margin-left: 1em;">%</span>
             </div>
         </div>
     </div>
@@ -113,16 +120,17 @@
     function onMessageArrived(message) {
         console.log("onMessageArrived:" + message.payloadString);
         const data = JSON.parse(message.payloadString);
-        const topicVal = document.getElementById("topic");
-        topicVal.innerHTML = data.type;
         const tempVal = document.getElementById("temp");
         // tempVal.innerHTML = data.temp;
         const ldrVal = document.getElementById("ldr");
+        const  humidityVal = document.getElementById("humidity");
         // ldrVal.innerHTML = data.ldr;
         temp = parseInt(data.temperature)
         ldr = parseInt(data.pressure)
+        humidity = parseInt(data.humidity)
         animateValue(tempVal, 0, temp, 800);
         animateValue(ldrVal, 0, ldr, 800);
+        animateValue(humidityVal, 0, humidity, 800);
     }
 
     function animateValue(obj, start, end, duration) {
