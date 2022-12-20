@@ -1,8 +1,0 @@
-adafruit/Adafruit MPU6050 @ ^2.2.4
-adafruit/Adafruit HTS221 @ ^0.1.2
-https://github.com/tzapu/WiFiManager
-adafruit/Adafruit BMP280 Library@^2.6.6
-adafruit/Adafruit NeoPixel@^1.10.5
-MQTT
-bblanchon/ArduinoJson @ ^6.19.4
-knolleary/PubSubClient @ ^2.8
