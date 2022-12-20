@@ -1,6 +1,9 @@
-# monitoring-bot.github.io
-### QR code
+# monitoring-bot.github.io 
+![monitoring-bot](/ESP32-S2.png) 
+### QR code 
 
+
+<img src="/IMG_3144.png" width="150" height="150">
 
 ### รายชื่อสมาชิกในกลุ่ม
 ##### 1. ธัญพิสิฐ แกมทอง 6210612534 ทำส่วนของ bot เป็น Docker สำหรับ LINE bot + MongoDB
