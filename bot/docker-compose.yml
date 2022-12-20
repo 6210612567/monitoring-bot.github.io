@@ -1,0 +1,22 @@
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "80:8080"
+    environment:
+      - MONGODB_URI=mongodb://thanpisit:kaemthong@bot-mongodb-1:27017?retryWrites=true&w=majority
+      - NGROK_AUTH_TOKEN=2FblAgJR6WCUROj5URXy5kApPPJ_42nZGcyEs43nJDnrzN7wt
+      - LINE_CH_SECRET=fd45b7beae77ca89a5b11b6bf065427b
+      - LINE_ACCESS_TOKEN=gMWEaLQC1InTJTsLckSw/0UulobNHutauOtay5xPU5syOXvcT611mrS2WYhLDPLtkMtui8iCDr+ODFcxNgxXjCGVURsUO+DgEDVA4Fbwtx5u50u52SHouHQzKVtFfvadgY4odTR7Ak5bATf/ZOq+EwdB04t89/1O/w1cDnyilFU=
+      - USER_ID=Ufe4be2a4e07e6888121b4c9d28966443
+
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo
+    ports: 
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=thanpisit
+      - MONGO_INITDB_ROOT_PASSWORD=kaemthong
