@@ -1,5 +1,5 @@
 # monitoring-bot.github.io 
-![monitoring-bot](/ESP32-S2.png) 
+![monitoring-bot](/ESP.jpg) 
 ### QR code 
 
 
